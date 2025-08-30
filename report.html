@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaarka Warbixinta - Dugsiga Magaalada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+             <div class="sidebar-header">
+                <h2><i class="fa-solid fa-school"></i> Dugsiga Magaalada</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> STUDENT</a></li>
+                <li><a href="Student Attendance.html"><i class="fa-solid fa-clipboard-user"></i> ATTENDENCE</a></li>
+                <li><a href="student-card.html"><i class="fa-solid fa-id-card"></i> CARD STUDENT</a></li>
+                <li class="active"><a href="report.html"><i class="fa-solid fa-file-invoice"></i> REPORT</a></li>
+                 <!-- <li><a href="daily-diary.html"><i class="fa-solid fa-book"></i> Maalinlaha Ardayga</a></li> -->
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <i class="fa-solid fa-bars menu-toggle"></i>
+                    <div class="header-title">
+                        <h1><i class="fa-solid fa-file-invoice"></i> Kaarka Warbixinta</h1>
+                         <p id="current-date"><i class="fa-solid fa-calendar"></i> Ogosto 24, 2025</p>
+                    </div>
+                </div>
+                 <div class="theme-switcher">
+                    <i class="fa-solid fa-sun light-icon"></i>
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                </div>
+            </header>
+
+            <section class="content">
+                <div class="report-card-container">
+                    <div class="report-header">
+                        <h2>Shabakadda Dugsiga Magaalada</h2>
+                        <p>Imtixaanaadka Kow iyo Labaatanaad 2025</p>
+                    </div>
+
+                    <div class="student-info-grid">
+                        <div>
+                            <p><strong>Magaca Ardayga:</strong> Ayesha Khan</p>
+                            <p><strong>Magaca Aabaha:</strong> Javed Khan</p>
+                        </div>
+                        <div>
+                            <p><strong>Fasalka:</strong> 10</p>
+                            <p><strong>Nambarka Roolka:</strong> N/A</p>
+                        </div>
+                        <div class="student-picture-report">
+                            <img src="https://placehold.co/80x80/4A55A2/FFF?text=Sawir" alt="sawirka ardayga">
+                        </div>
+                    </div>
+
+                    <div class="summary-boxes">
+                        <div class="summary-box">
+                            <p>Boqolkiiba Guud</p>
+                            <h3>85%</h3>
+                        </div>
+                        <div class="summary-box">
+                            <p>Darajada Guud</p>
+                            <h3>A</h3>
+                        </div>
+                        <div class="summary-box">
+                            <p>Booska Fasalka</p>
+                            <h3>N/A</h3>
+                        </div>
+                        <div class="summary-box">
+                            <p>Xaadiriska</p>
+                            <span class="tag tag-success">Wanaagsan</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Maadada</th>
+                                <th>La Helay</th>
+                                <th>Wadarta</th>
+                                <th>%</th>
+                                <th>Darajada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Saynis</td><td>43</td><td>50</td><td>86%</td><td><span class="grade-tag grade-a">A</span></td></tr>
+                            <tr><td>Xisaab</td><td>47</td><td>50</td><td>94%</td><td><span class="grade-tag grade-a-plus">A+</span></td></tr>
+                            <tr><td>Ingiriis</td><td>39</td><td>50</td><td>78%</td><td><span class="grade-tag grade-b">B</span></td></tr>
+                            <tr><td>Carabi</td><td>41</td><td>50</td><td>82%</td><td><span class="grade-tag grade-a">A</span></td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Wadarta</th>
+                                <th>170</th>
+                                <th>200</th>
+                                <th>85%</th>
+                                <th><span class="grade-tag grade-a">A</span></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                     <div class="remarks-section">
+                        <h4>Faallooyinka Macalinka:</h4>
+                        <div class="remarks-details">
+                           <p><strong>Xaadiriska:</strong> <span class="tag tag-success">Wanaagsan</span></p>
+                           <p><strong>Dhaqanka:</strong> <span class="tag tag-success">Wanaagsan</span></p>
+                           <p><strong>Ka Qaybgalka:</strong> <span class="tag tag-success">Wanaagsan</span></p>
+                        </div>
+                    </div>
+
+                    <div class="signature-section">
+                        <div class="signature-line"><p>Macalinka Fasalka</p></div>
+                        <div class="signature-line"><p>Maamulaha</p></div>
+                        <div class="signature-line"><p>Waalidka/Masuulka</p></div>
+                    </div>
+
+                    <div class="report-actions">
+                        <button class="btn btn-primary" onclick="window.print()"><i class="fa-solid fa-print"></i> Daabac Warbixinta</button>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

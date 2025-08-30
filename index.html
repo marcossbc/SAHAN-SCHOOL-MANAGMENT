@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Dugsiga Magaalada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-school"></i>SAHAN School</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> STUDENT</a></li>
+                <li><a href="Student Attendance.html"><i class="fa-solid fa-clipboard-user"></i> ATTENDENCE</a></li>
+                  <!-- <li><a href="daily-diary.html"><i class="fa-solid fa-book"></i> Maalinlaha Ardayga</a></li> -->
+                <li><a href="student-card.html"><i class="fa-solid fa-id-card"></i> CARD STUDENT</a></li>
+                <li><a href="report.html"><i class="fa-solid fa-file-invoice"></i> Kaarka Warbixinta</a></li>
+                <!-- <li><a href="#"><i></i></a>login</li> -->
+               
+
+            </ul>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <i class="fa-solid fa-bars menu-toggle"></i>
+                    <div class="header-title">
+                        <h1><i class="fa-solid fa-gauge"></i> Dashboard</h1>
+                        <p id="current-date"><i class="fa-solid fa-calendar"></i> Ogosto 25, 2025</p>
+                    </div>
+                </div>
+                <div class="theme-switcher">
+                    <i class="fa-solid fa-sun light-icon"></i>
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                </div>
+            </header>
+            
+            <section class="content">
+                <!-- Dashboard Cards -->
+                <div class="cards-grid">
+                    <div class="card"><div class="card-icon"><i class="fa-solid fa-users"></i></div><div class="card-info"><p>WADARTA ARDAYDA</p><h3 id="total-students">0</h3></div></div>
+                    <div class="card"><div class="card-icon"><i class="fa-solid fa-money-bill-wave"></i></div><div class="card-info"><p>WADARTA LACAGTA</p><h3>$33,600</h3></div></div>
+                    <div class="card"><div class="card-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div><div class="card-info"><p>WADARTA LAGA HELEY</p><h3>$3,800</h3></div></div>
+                    <div class="card"><div class="card-icon"><i class="fa-solid fa-hourglass-half"></i></div><div class="card-info"><p>KUWA LAGASUGAAYO</p><h3>$29,800</h3></div></div>
+                </div>
+                <!-- Charts -->
+                <div class="overview-grid">
+                    <div class="chart-container"><h3>Guudmarka Maaliyadeed</h3><canvas id="feeStatusChart"></canvas></div>
+                    <div class="chart-container"><h3>Qaybinta  Ardayda</h3><canvas id="genderChart"></canvas></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

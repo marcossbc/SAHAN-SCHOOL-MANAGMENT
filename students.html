@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ardayda - Dugsiga Magaalada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header"><h2><i class="fa-solid fa-school"></i> Dugsiga Magaalada</h2></div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li class="active"><a href="students.html"><i class="fa-solid fa-user-graduate"></i> STUDENT</a></li>
+                <li><a href="Student Attendance.html"><i class="fa-solid fa-clipboard-user"></i> ATTENDANCE</a></li>
+                 <!-- <li><a href="daily-diary.html"><i class="fa-solid fa-book"></i> Maalinlaha Ardayga</a></li> -->
+                <li><a href="student-card.html"><i class="fa-solid fa-id-card"></i> CARD STUDENT</a></li>
+                <li><a href="report.html"><i class="fa-solid fa-file-invoice"></i> REPORT</a></li>
+                
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <i class="fa-solid fa-bars menu-toggle"></i>
+                    <div class="header-title">
+                        <h1><i class="fa-solid fa-user-graduate"></i> Ardayda</h1>
+                        <p>Maamul macluumaadka ardayda</p>
+                    </div>
+                </div>
+                <div class="theme-switcher">
+                    <i class="fa-solid fa-sun light-icon"></i>
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                </div>
+            </header>
+
+            <section class="content">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Ardayda Firfircoon</h3>
+                        <div class="actions">
+                            <input type="search" id="searchInput" placeholder="Ku raadi magac...">
+                            <button class="btn btn-primary" id="addStudentBtn"><i class="fa-solid fa-user-plus"></i> Kudar Arday</button>
+                        </div>
+                    </div>
+                    <table class="data-table" id="studentTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>SAWIR</th>
+                                <th>MAGACA</th>
+                                <th>MAGACA AABAHA</th>
+                                <th>TELEFOON</th>
+                                <th>FASALKA</th>
+                                <th>FIIGA AASAASIGA</th>
+                                <th>TALLAABOOYIN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Student data will be rendered here by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Adding/Editing Students -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Kudar Arday Cusub</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="studentForm">
+                    <input type="hidden" id="studentId">
+                    <div class="form-group profile-upload">
+                        <label for="profilePic">
+                            <img src="https://placehold.co/100x100/606470/FFF?text=Sawir" alt="Profile Preview" id="profilePreview" class="profile-preview">
+                        </label>
+                        <input type="file" id="profilePic" accept="image/*" style="display: none;">
+                        <span>Guji sawirka si aad u beddesho</span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentName">Magaca Ardayga</label>
+                            <input type="text" id="studentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherName">Magaca Aabaha</label>
+                            <input type="text" id="fatherName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telefoon</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="class">Fasalka</label>
+                            <input type="text" id="class">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="baseFee">Fiiga Aasaasiga ah</label>
+                            <input type="number" id="baseFee" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Kaydi Ardayga</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

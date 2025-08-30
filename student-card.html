@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameeyaha Kaarka Ardayga - Dugsiga Magaalada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-school"></i> Dugsiga Magaalada</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> Ardayda</a></li>
+                <li><a href="Student Attendance.html"><i class="fa-solid fa-clipboard-user"></i> Xaadiriska</a></li>
+                 <!-- <li><a href="daily-diary.html"><i class="fa-solid fa-book"></i> Maalinlaha Ardayga</a></li> -->
+                <li class="active"><a href="student-card.html"><i class="fa-solid fa-id-card"></i> Kaarka Ardayga</a></li>
+                <li><a href="report.html"><i class="fa-solid fa-file-invoice"></i> REPORT</a></li>
+                 
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                 <div class="header-left">
+                    <i class="fa-solid fa-bars menu-toggle"></i>
+                    <div class="header-title">
+                        <h1><i class="fa-solid fa-id-card"></i> Sameeyaha Kaarka Ardayga</h1>
+                        <p id="current-date"><i class="fa-solid fa-calendar"></i> Ogosto 24, 2025</p>
+                    </div>
+                </div>
+                 <div class="theme-switcher">
+                    <i class="fa-solid fa-sun light-icon"></i>
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                </div>
+            </header>
+
+            <section class="content">
+                <div id="id-cards-container" class="id-cards-container">
+                    <!-- Kaararka Ardayda halkan ayaa lagu soo saari doonaa iyadoo la isticmaalayo JS -->
+                     <div class="id-card">
+                        <div class="id-card-header">
+                            <h4>Nidaamka Dugsiga Imaami</h4>
+                        </div>
+                        <div class="id-card-body">
+                            <img src="https://placehold.co/100x120/4A55A2/FFF?text=Sawir" alt="Sawirka Ardayga">
+                            <ul>
+                                <li><strong>ID:</strong> 72</li>
+                                <li><strong>Magaca:</strong> Burhaan </li>
+                                <li><strong>Aabaha:</strong> cabdilaahi</li>
+                                <li><strong>Fasalka:</strong> 10</li>
+                                <li><strong>Waqtiga uu dhacayo:</strong> 08/2026</li>
+                            </ul>
+                        </div>
+                        <div class="id-card-footer">
+                            <p>123 Jidka Dugsiga, Muqdisho | Telefoon: (061) 1234567</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-actions">
+                    <button class="btn btn-primary" onclick="window.print()"><i class="fa-solid fa-print"></i> Daabac Kaararka</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

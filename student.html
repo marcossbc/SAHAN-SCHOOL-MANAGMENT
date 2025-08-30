@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xaadiriska Ardayda - Dugsiga Magaalada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-school"></i> Dugsiga Magaalada</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> STUDENT</a></li>
+                <li class="active"><a href="Student Attendance.html"><i class="fa-solid fa-clipboard-user"></i> ATTENDENCE</a></li>
+                 <!-- <li><a href="daily-diary.html"><i class="fa-solid fa-book"></i> Maalinlaha Ardayga</a></li> -->
+                <li><a href="student-card.html"><i class="fa-solid fa-id-card"></i> CARD STUDENT</a></li>
+                <li><a href="report.html"><i class="fa-solid fa-file-invoice"></i> REPORT</a></li>
+                 
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <i class="fa-solid fa-bars menu-toggle"></i>
+                    <div class="header-title">
+                        <h1><i class="fa-solid fa-clipboard-user"></i> Xaadiriska Ardayda</h1>
+                        <p id="current-date"><i class="fa-solid fa-calendar"></i> Ogosto 24, 2025</p>
+                    </div>
+                </div>
+                 <div class="theme-switcher">
+                    <i class="fa-solid fa-sun light-icon"></i>
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                </div>
+            </header>
+
+            <section class="content">
+                <div class="content-box">
+                    <div class="filters">
+                        <div class="form-group">
+                            <label for="date">Taariikhda</label>
+                            <input type="date" id="date" value="2025-08-24">
+                        </div>
+                        <div class="form-group">
+                            <label for="classFilter">Fasalka</label>
+                            <select id="classFilter">
+                                <option>Dhammaan</option>
+                                <option>10</option>
+                                <option>9</option>
+                                <option>8</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary">Soo Roga</button>
+                    </div>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>MAGACA</th>
+                                <th>FASALKA</th>
+                                <th>XAALADDA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>72</td>
+                                <td>Ayesha Khan</td>
+                                <td>10</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option value="present" selected>Jooga</option>
+                                        <option value="absent">Maqan</option>
+                                        <option value="late">Soo daahay</option>
+                                        <option value="leave">Fasax</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>75</td>
+                                <td>Fahad Saleem</td>
+                                <td>10</td>
+                                <td>
+                                    <select class="status-select">
+                                        <option value="present" selected>Jooga</option>
+                                        <option value="absent">Maqan</option>
+                                        <option value="late">Soo daahay</option>
+                                        <option value="leave">Fasax</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="save-button-container">
+                        <button class="btn btn-primary"><i class="fa-solid fa-save"></i> Kaydi</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
