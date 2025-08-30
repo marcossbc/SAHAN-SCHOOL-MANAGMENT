@@ -10,11 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const applyTheme = (theme) => {
         if (theme === "light") {
             body.classList.add("light-mode");
-            // document.documentElement.style.setProperty('--bg-color', '#0d0d0eff');
-           
         } else {
             body.classList.remove("light-mode");
-             document.documentElement.style.setProperty('--text-color', '#ffffff');
+            document.documentElement.style.setProperty('--text-color', '#ffffff');
         }
         localStorage.setItem("schoolTheme", theme);
     };
@@ -37,14 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
         menuToggle.addEventListener("click", () => {
             sidebar.classList.toggle("show");
         });
-        // Optional: Close sidebar when clicking outside of it
         document.addEventListener('click', (event) => {
             if (!sidebar.contains(event.target) && !menuToggle.contains(event.target) && sidebar.classList.contains('show')) {
                 sidebar.classList.remove('show');
             }
         });
     }
-    
+
     // --- 3. Update Current Date ---
     if (currentDateEl) {
         const today = new Date();
@@ -69,6 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("id-cards-container")) {
         initializeStudentCardPage();
     }
+
+    // D. NEW: Check for the attendance pages
+    if (document.getElementById("dailyAttendanceTable")) {
+        initializeDailyAttendancePage();
+    }
+    if (document.getElementById("attendanceTable")) {
+        initializeAttendancePage();
+    }
 });
 
 
@@ -76,14 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
 //  DASHBOARD PAGE FUNCTIONS
 // =================================================================
 function initializeDashboard() {
-    // Update total students card
     const totalStudentsEl = document.getElementById('total-students');
     const students = JSON.parse(localStorage.getItem('students')) || [];
     if (totalStudentsEl) {
         totalStudentsEl.textContent = students.length;
     }
 
-    // Initialize Charts
     const feeStatusCtx = document.getElementById("feeStatusChart").getContext("2d");
     new Chart(feeStatusCtx, {
         type: "bar",
@@ -130,13 +133,11 @@ function initializeStudentsPage() {
     const profilePicInput = document.getElementById("profilePic");
     const profilePreview = document.getElementById("profilePreview");
 
-    // --- Data Management ---
     const getStudents = () => JSON.parse(localStorage.getItem('students')) || [];
     const saveStudents = (students) => localStorage.setItem('students', JSON.stringify(students));
 
     let students = getStudents();
 
-    // --- Render Function ---
     const renderStudents = (filteredStudents) => {
         studentTableBody.innerHTML = "";
         const studentsToRender = filteredStudents || students;
@@ -149,14 +150,14 @@ function initializeStudentsPage() {
         studentsToRender.forEach(student => {
             const row = `
                 <tr data-id="${student.id}">
-                    <td>${student.id}</td>
-                    <td><img src="${student.photo}" alt="sawirka ardayga" class="student-photo"></td>
-                    <td>${student.name}</td>
-                    <td>${student.fatherName}</td>
-                    <td>${student.phone}</td>
-                    <td>${student.class}</td>
-                    <td>$${parseFloat(student.baseFee).toFixed(2)}</td>
-                    <td>
+                    <td data-label="ID">${student.id}</td>
+                    <td data-label="SAWIR"><img src="${student.photo}" alt="sawirka ardayga" class="student-photo"></td>
+                    <td data-label="MAGACA">${student.name}</td>
+                    <td data-label="AABAHA">${student.fatherName}</td>
+                    <td data-label="TELEFOON">${student.phone}</td>
+                    <td data-label="FASALKA">${student.class}</td>
+                    <td data-label="FIIGA">$${parseFloat(student.baseFee).toFixed(2)}</td>
+                    <td data-label="TALLAABO">
                         <button class="btn-action btn-edit"><i class="fa-solid fa-pencil"></i></button>
                         <button class="btn-action btn-delete"><i class="fa-solid fa-trash"></i></button>
                     </td>
@@ -166,7 +167,6 @@ function initializeStudentsPage() {
         });
     };
 
-    // --- Modal Handling ---
     const openModal = (title = "Kudar Arday Cusub", student = {}) => {
         document.getElementById('modalTitle').textContent = title;
         studentForm.reset();
@@ -190,7 +190,6 @@ function initializeStudentsPage() {
         if (e.target === modal) closeModal();
     });
 
-    // --- Form Submission (Add/Edit) ---
     studentForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const studentId = document.getElementById('studentId').value;
@@ -203,12 +202,12 @@ function initializeStudentsPage() {
             photo: profilePreview.src
         };
 
-        if (studentId) { // Editing existing student
+        if (studentId) {
             const index = students.findIndex(s => s.id == studentId);
             if (index > -1) {
                 students[index] = { ...students[index], ...studentData };
             }
-        } else { // Adding new student
+        } else {
             studentData.id = students.length > 0 ? Math.max(...students.map(s => s.id)) + 1 : 1;
             students.push(studentData);
         }
@@ -218,7 +217,6 @@ function initializeStudentsPage() {
         closeModal();
     });
 
-    // --- Edit and Delete ---
     studentTableBody.addEventListener("click", (e) => {
         const editBtn = e.target.closest(".btn-edit");
         const deleteBtn = e.target.closest(".btn-delete");
@@ -243,15 +241,12 @@ function initializeStudentsPage() {
         }
     });
 
-    // --- Search Functionality ---
     searchInput.addEventListener("input", (e) => {
         const searchTerm = e.target.value.toLowerCase();
         const filtered = students.filter(s => s.name.toLowerCase().includes(searchTerm));
         renderStudents(filtered);
     });
     
-    // --- Profile Picture Preview ---
-    // qeybta profileka ardeyga uusoogalinayao 
     profilePreview.addEventListener('click', () => profilePicInput.click());
     profilePicInput.addEventListener("change", () => {
         const file = profilePicInput.files[0];
@@ -264,7 +259,6 @@ function initializeStudentsPage() {
         }
     });
 
-    // Initial render
     renderStudents();
 }
 
@@ -276,7 +270,7 @@ function initializeStudentCardPage() {
     const container = document.getElementById('id-cards-container');
     const students = JSON.parse(localStorage.getItem('students')) || [];
 
-    container.innerHTML = ''; // Clear existing content
+    container.innerHTML = '';
     
     if (students.length === 0) {
         container.innerHTML = `<p>Lama helin arday si loo soo saaro kaarar.</p>`;
@@ -305,5 +299,155 @@ function initializeStudentCardPage() {
             </div>
         `;
         container.insertAdjacentHTML('beforeend', cardHTML);
+    });
+}
+
+// =================================================================
+//  NEW: DAILY ATTENDANCE PAGE FUNCTIONS
+// =================================================================
+function initializeDailyAttendancePage() {
+    const loadStudentsBtn = document.getElementById('loadStudentsBtn');
+    const attendanceClassSelect = document.getElementById('attendanceClass');
+    const attendanceDateInput = document.getElementById('attendanceDate');
+    const attendanceTableBody = document.querySelector('#dailyAttendanceTable tbody');
+    const saveAttendanceBtn = document.getElementById('saveAttendanceBtn');
+    const attendanceTableContainer = document.getElementById('attendance-table-container');
+
+    loadStudentsBtn.addEventListener('click', () => {
+        const selectedClass = attendanceClassSelect.value;
+        if (!selectedClass) {
+            alert("Fadlan dooro fasal.");
+            return;
+        }
+
+        const students = JSON.parse(localStorage.getItem('students')) || [];
+        const filteredStudents = students.filter(s => s.class === selectedClass);
+
+        if (filteredStudents.length === 0) {
+            attendanceTableBody.innerHTML = `<tr><td colspan="4" style="text-align:center;">Lama helin arday fasalkan.</td></tr>`;
+            attendanceTableContainer.style.display = 'block';
+            saveAttendanceBtn.style.display = 'none';
+            return;
+        }
+
+        attendanceTableBody.innerHTML = "";
+        filteredStudents.forEach(student => {
+            const row = `
+                <tr data-id="${student.id}" data-class="${student.class}" data-name="${student.name}">
+                    <td data-label="ID ARDAY">${student.id}</td>
+                    <td data-label="MAGACA">${student.name}</td>
+                    <td data-label="FASALKA">${student.class}</td>
+                    <td data-label="XAALADDA">
+                        <div class="attendance-status">
+                            <input type="radio" id="present-${student.id}" name="status-${student.id}" value="present" checked>
+                            <label for="present-${student.id}">Jooga</label>
+                            <input type="radio" id="absent-${student.id}" name="status-${student.id}" value="absent">
+                            <label for="absent-${student.id}">Maqan</label>
+                            <input type="radio" id="late-${student.id}" name="status-${student.id}" value="late">
+                            <label for="late-${student.id}">Raagay</label>
+                        </div>
+                    </td>
+                </tr>
+            `;
+            attendanceTableBody.insertAdjacentHTML('beforeend', row);
+        });
+
+        attendanceTableContainer.style.display = 'block';
+        saveAttendanceBtn.style.display = 'block';
+    });
+
+    saveAttendanceBtn.addEventListener('click', () => {
+        const attendanceDate = attendanceDateInput.value;
+        if (!attendanceDate) {
+            alert("Fadlan dooro taariikhda.");
+            return;
+        }
+
+        const attendanceRecords = [];
+        const studentRows = attendanceTableBody.querySelectorAll('tr');
+
+        studentRows.forEach(row => {
+            const studentId = row.dataset.id;
+            const studentName = row.dataset.name;
+            const studentClass = row.dataset.class;
+            const status = row.querySelector(`input[name="status-${studentId}"]:checked`).value;
+            
+            attendanceRecords.push({
+                id: studentId,
+                name: studentName,
+                class: studentClass,
+                date: attendanceDate,
+                status: status
+            });
+        });
+
+        const allAttendance = JSON.parse(localStorage.getItem('attendanceRecords')) || [];
+        const existingAttendance = allAttendance.filter(rec => rec.date !== attendanceDate || rec.class !== attendanceClassSelect.value);
+        const newAttendance = [...existingAttendance, ...attendanceRecords];
+
+        localStorage.setItem('attendanceRecords', JSON.stringify(newAttendance));
+        alert("Xaadiriska si guul ah ayaa loo diiwaangeliyey!");
+    });
+}
+
+// =================================================================
+//  NEW: ATTENDANCE SEARCH/VIEW PAGE FUNCTIONS
+// =================================================================
+function initializeAttendancePage() {
+    const filterDateInput = document.getElementById('filterDate');
+    const filterClassSelect = document.getElementById('filterClass');
+    const loadBtn = document.getElementById('loadBtn');
+    const attendanceTableBody = document.querySelector('#attendanceTable tbody');
+    
+    const renderAttendance = (records) => {
+        attendanceTableBody.innerHTML = "";
+        if (records.length === 0) {
+            attendanceTableBody.innerHTML = `<tr><td colspan="5" style="text-align:center;">Ma jiro diiwaan xaadiris ah oo la helay.</td></tr>`;
+            return;
+        }
+
+        records.forEach(record => {
+            let statusTagClass;
+            let statusText;
+            switch (record.status) {
+                case 'present':
+                    statusTagClass = 'tag-success';
+                    statusText = 'Jooga';
+                    break;
+                case 'absent':
+                    statusTagClass = 'tag-danger';
+                    statusText = 'Maqan';
+                    break;
+                case 'late':
+                    statusTagClass = 'tag-info';
+                    statusText = 'Raagay';
+                    break;
+            }
+
+            const row = `
+                <tr>
+                    <td data-label="ID ARDAY">${record.id}</td>
+                    <td data-label="MAGACA">${record.name}</td>
+                    <td data-label="FASALKA">${record.class}</td>
+                    <td data-label="XAALADDA"><span class="tag ${statusTagClass}">${statusText}</span></td>
+                    <td data-label="TAARIIKH">${record.date}</td>
+                </tr>
+            `;
+            attendanceTableBody.insertAdjacentHTML('beforeend', row);
+        });
+    };
+
+    loadBtn.addEventListener('click', () => {
+        const date = filterDateInput.value;
+        const className = filterClassSelect.value;
+        const allRecords = JSON.parse(localStorage.getItem('attendanceRecords')) || [];
+        
+        const filteredRecords = allRecords.filter(record => {
+            const dateMatch = date ? record.date === date : true;
+            const classMatch = className !== 'All' ? record.class === className : true;
+            return dateMatch && classMatch;
+        });
+
+        renderAttendance(filteredRecords);
     });
 }

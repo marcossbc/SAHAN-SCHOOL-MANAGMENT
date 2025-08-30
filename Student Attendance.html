@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xaadiriska Ardayda - Dugsiga Magaalada</title>
+    <title>Gali Xaadiriska Maalinlaha - Dugsiga Magaalada</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -17,7 +17,7 @@
                 <li><a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
                 <li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> STUDENT</a></li>
                 <li class="active"><a href="Student Attendance.html"><i class="fa-solid fa-clipboard-user"></i> ATTENDENCE</a></li>
-                 <!-- <li><a href="daily-diary.html"><i class="fa-solid fa-book"></i> Maalinlaha Ardayga</a></li> -->
+                <!-- <li class="active"><a href="daily-attendance.html"><i class="fa-solid fa-marker"></i> Gali Xaadiris</a></li> -->
                 <li><a href="student-card.html"><i class="fa-solid fa-id-card"></i> CARD STUDENT</a></li>
                 <li><a href="report.html"><i class="fa-solid fa-file-invoice"></i> REPORT</a></li>
             </ul>
@@ -28,8 +28,8 @@
                 <div class="header-left">
                     <i class="fa-solid fa-bars menu-toggle"></i>
                     <div class="header-title">
-                        <h1><i class="fa-solid fa-clipboard-user"></i> Xaadiriska Ardayda</h1>
-                        <p id="current-date">Ka baadh xaadiriska ardayda</p>
+                        <h1><i class="fa-solid fa-marker"></i> Gali Xaadiriska Maalinlaha</h1>
+                        <p id="current-date">Gali xaadiriska ardayda</p>
                     </div>
                 </div>
                  <div class="theme-switcher">
@@ -40,40 +40,45 @@
 
             <section class="content">
                 <div class="content-box">
-                    <div class="view-tabs">
-                        <button class="btn-tab active"><i class="fa-solid fa-magnifying-glass"></i> Baadh Diiwaanka</button>
-                        <!-- <a href="daily-diary.html" class="btn btn-primary"><i class="fa-solid fa-marker"></i> Gali Xaadiris</a> -->
-                    </div>
                     <div class="filters">
                         <div class="form-group">
-                            <label for="filterDate">Taariikhda</label>
-                            <input type="date" id="filterDate">
+                            <label for="attendanceDate">Taariikhda</label>
+                            <input type="date" id="attendanceDate">
                         </div>
                         <div class="form-group">
-                            <label for="filterClass">Fasalka</label>
-                            <select id="filterClass">
-                                <option value="All">Dhammaan</option>
+                            <label for="attendanceClass">Fasalka</label>
+                            <select id="attendanceClass">
+                                <option value="">Dooro Fasalka</option>
                                 <option value="10">10</option>
                                 <option value="9">9</option>
                                 <option value="8">8</option>
+                                <option value="7">7</option>
+                                <option value="6">6</option>
+                                <option value="5">5</option>
+                                <option value="4">4</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary" id="loadBtn"><i class="fa-solid fa-rotate"></i> Soo Roga</button>
+                        <button class="btn btn-primary" id="loadStudentsBtn"><i class="fa-solid fa-users"></i> Soo Roga Ardayda</button>
                     </div>
                     
-                    <table class="data-table" id="attendanceTable">
-                        <thead>
-                            <tr>
-                                <th>ID ARDAY</th>
-                                <th>MAGACA</th>
-                                <th>FASALKA</th>
-                                <th>XAALADDA</th>
-                                <th>TAARIIKH</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div id="attendance-table-container" style="display: none;">
+                        <table class="data-table" id="dailyAttendanceTable">
+                            <thead>
+                                <tr>
+                                    <th>ID ARDAY</th>
+                                    <th>MAGACA</th>
+                                    <th>FASALKA</th>
+                                    <th>XAALADDA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             </tbody>
-                    </table>
+                        </table>
+                        <div class="save-button-container">
+                            <button class="btn btn-primary" id="saveAttendanceBtn"><i class="fa-solid fa-floppy-disk"></i> Diiwaangeli Xaadiriska</button>
+                        </div>
+                    </div>
+                    
                 </div>
             </section>
         </main>
