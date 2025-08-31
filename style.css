@@ -121,6 +121,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  /* display: none; */
 }
 
 .menu-toggle {
@@ -128,7 +129,23 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
+.logout-section{
+  margin-left: 20px;
+  background: none;
+}
+.logout-btn{
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  margin-right: 20px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
 .header-title h1 {
   font-size: 1.8rem;
   margin-bottom: 5px;
