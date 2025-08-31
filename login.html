@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up - PowerSchool</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="Home.html" class="logo"><img src="https://png.pngtree.com/png-clipart/20230623/original/pngtree-school-logo-design-template-vector-png-image_9204124.png" width="50px" alt="PowerSchool Logo"></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Solution.html">Solutions</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="login-link">Login</a>
+                <a href="#" class="demo-button">GET START</a>
+            </div>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-main login-page-main">
+        <div class="login-container">
+            <div class="form-wrapper">
+                <div class="form-toggle-buttons">
+                    <button id="show-login-btn" class="active">Login</button>
+                    <button id="show-signup-btn">Sign Up</button>
+                </div>
+
+                <form id="login-form" class="auth-form active">
+                    <h2>Login to Your Account</h2>
+                    <div class="form-group">
+                        <label for="login-username">Username or Email</label>
+                        <input type="text" id="login-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+
+                <form id="signup-form" class="auth-form">
+                    <h2>Create a New Account</h2>
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>PowerSchool is the leading provider of K-12 education technology solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><img src="https://via.placeholder.com/24" alt="Facebook"></a>
+                    <a href="#"><img src="https://via.placeholder.com/24" alt="Twitter"></a>
+                    <a href="#"><img src="https://via.placeholder.com/24" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PowerSchool. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>

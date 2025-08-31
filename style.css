@@ -258,6 +258,7 @@ body:not(.light-mode) .light-icon {
   flex-wrap: wrap;
 }
 
+
 .table-header input[type="search"] {
   padding: 8px 12px;
   border-radius: 5px;
@@ -365,6 +366,7 @@ body:not(.light-mode) .light-icon {
   border-radius: 10px;
   animation: slide-down 0.4s;
 }
+
 
 @keyframes slide-down {
   from {

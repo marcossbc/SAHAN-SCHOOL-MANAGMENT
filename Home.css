@@ -168,7 +168,9 @@ body {
     background-color: var(--white);
     color: var(--primary-blue);
     border-color: var(--white);
+
 }
+
 
 .btn-primary:hover {
     background-color: var(--light-gray);
