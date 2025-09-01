@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="so">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerSchool SAHAN</title>
+    <link rel="stylesheet" href="/Pages/Home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a href="Home.html" class="logo"
+          ><img
+            src="https://png.pngtree.com/png-clipart/20230623/original/pngtree-school-logo-design-template-vector-png-image_9204124.png"
+            width="50px"
+            alt="PowerSchool Logo"
+        /></a>
+        <nav class="nav">
+          <ul class="nav-links">
+            <li><a href="/Pages/Home.html">Home</a></li>
+            <li><a href="/Pages/Solution.html">Solutions</a></li>
+            <li><a href="/Pages/About.html">About Us</a></li>
+            <li><a href="/Pages/Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="/Pages/login.html" class="login-link">Login</a>
+          <a href="/index.html" class="demo-button">GET START</a>
+        </div>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-container">
+          <div class="hero-content">
+            <p class="breadcrumbs">SAHAN SCHOOL > OPERATIONS</p>
+            <h1>SAHAN SCHOOL</h1>
+            <h2 class="subtitle">K-12 Student Information System</h2>
+            <p class="description">
+              Use flexible, innovative, and easy-to-use technology to Sahan your
+              school or district operations.
+            </p>
+            <div class="hero-buttons">
+              <a href="#" class="btn btn-primary">Watch a Demo</a>
+              <a href="#" class="btn btn-secondary"
+                >Sahan School SIS At-a-Glance</a
+                
+              >
+              
+            </div>
+          </div>
+          <div class="hero-image-container">
+            <img
+              src="https://www.schooldekho.org/assets/images/school_dekho_banner2.webp"
+              alt="Students in a classroom"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="features-section">
+        <div class="container">
+          <h2>Why Choose PowerSchool?</h2>
+          <div class="feature-cards">
+            <div class="card">
+              <img
+                src="https://bouve.northeastern.edu/wp-content/uploads/2023/05/what-is-a-school-psychologist-northeastern-graduate.webp"
+                alt="Icon"
+                class="feature-icon"
+              />
+              <h3>Innovative Technology</h3>
+              <p>
+                Our platform uses the latest technology to provide a seamless
+                experience for students, teachers, and parents.
+              </p>
+            </div>
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI1cdMMFp-L4vHWmWgp734de12bDnqMu3FSp7mHeu3Voinn7kGIEzdjmi32UCQY9hjELA&usqp=CAU"
+                alt="Icon"
+                class="feature-icon"
+              />
+              <h3>Unified Experience</h3>
+              <p>
+                Manage all school operations from a single, integrated platform,
+                reducing complexity and saving time.
+              </p>
+            </div>
+            <div class="card">
+              <img
+                src="https://esmarts.qodeinteractive.com/wp-content/uploads/2017/10/course-img-5-768x490.jpg"
+                alt="Icon"
+                class="feature-icon"
+              />
+              <h3>Better Outcomes</h3>
+              <p>
+                Drive student success with powerful analytics and tools that
+                help identify areas for improvement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="courses-section" class="container">
+        <h2>Our Language Courses</h2>
+        <div class="tabs">
+          <button class="active" onclick="filterCourses('all')">All</button>
+          <button onclick="filterCourses('english')">English</button>
+          <button onclick="filterCourses('german')">German</button>
+          <button onclick="filterCourses('spanish')">Spanish</button>
+          <button onclick="filterCourses('french')">French</button>
+          <button onclick="filterCourses('chinese')">Chinese</button>
+        </div>
+
+        <div class="course-container" id="courses">
+          <div class="course english chinese">
+            <img
+              src="/images/Depositphotos_63889211_chinesFOUR-580x580.jpg"
+              alt="English for Children"
+            />
+            <div class="course-content">
+              <h3>English for Children</h3>
+              <span class="price free">Free</span>
+              <p class="details">Chinese, English | 12 Weeks</p>
+            </div>
+          </div>
+          <div class="course english french">
+            <img
+              src="/images/Depositphotos_58582087_FIVE-580x580.jpg"
+              alt="Intensive Course"
+            />
+            <div class="course-content">
+              <h3>Intensive Course</h3>
+              <span class="price">$320.00</span>
+              <p class="details">English, French | 20 Weeks</p>
+            </div>
+          </div>
+          <div class="course chinese german">
+            <img
+              src="/images/Depositphotos_73936385_SIX-300x300.jpg"
+              alt="30-80-90 Business"
+            />
+            <div class="course-content">
+              <h3>30-80-90 Business</h3>
+              <span class="price">$525.00</span>
+              <p class="details">Chinese, German | 24 Week</p>
+            </div>
+          </div>
+          <div class="course english spanish">
+            <img
+              src="/images/Depositphotos_66455527_SAVEN-400x250.jpg"
+              alt="Language Trainings"
+            />
+            <div class="course-content">
+              <h3>Language Trainings</h3>
+              <span class="price">$150.00</span>
+              <p class="details">English, Somalia | 1 Week</p>
+            </div>
+          </div>
+          <div class="course chinese french">
+            <img
+              src="/images/Depositphotos_46326837_oTHREE-580x580.jpg"
+              alt="Basic Skills"
+            />
+            <div class="course-content">
+              <h3>Basic Skills</h3>
+              <span class="price">$150.00</span>
+              <p class="details">Chinese, French | 12 Week</p>
+            </div>
+          </div>
+          <div class="course french german">
+            <img
+              src="/images/Depositphotos_85241664_original-1-580xWTO.jpg"
+              alt="Mastering Grammar"
+            />
+            <div class="course-content">
+              <h3>Mastering Grammar</h3>
+              <span class="price">$90.00</span>
+              <p class="details">French, German | 20 Week</p>
+            </div>
+          </div>
+          <div class="course french spanish">
+            <img
+              src="/images/Depositphotos_73936515_original-580x580.jpg"
+              alt="Language Studies"
+            />
+            <div class="course-content">
+              <h3>Language Studies</h3>
+              <span class="price">$355.00</span>
+              <p class="details">French, Spanish | 15 Week</p>
+            </div>
+          </div>
+          <div class="course chinese spanish">
+            <img
+              src="https://esmarts.qodeinteractive.com/wp-content/uploads/2017/10/course-img-13-768x490.jpg"
+              alt="Second Language"
+            />
+            <div class="course-content">
+              <h3>Second Language</h3>
+              <span class="price">$425.00</span>
+              <p class="details">Chinese, Spanish | 12 Week</p>
+            </div>
+          </div>
+          <div class="course chinese somali">
+            <img
+              src="https://esmarts.qodeinteractive.com/wp-content/uploads/2017/10/course-img-5-768x490.jpg"
+              alt="Somali Language"
+            />
+            <div class="course-content">
+              <h3>Somali Language</h3>
+              <span class="price">$400.00</span>
+              <p class="details">Somali,TURKEY | 12 Week</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="icon-section">
+        <div class="container">
+          <h2>Our Program Features</h2>
+          <div class="icons-grid">
+            <div class="icon-block">
+              <i>&#xea00;</i>
+              <h4>Pre Test</h4>
+              <p>Test your skills before starting.</p>
+            </div>
+            <div class="icon-block">
+              <i>&#xea01;</i>
+              <h4>Survival English</h4>
+              <p>Learn practical English for daily use.</p>
+            </div>
+            <div class="icon-block">
+              <i>&#xea02;</i>
+              <h4>Fluent English</h4>
+              <p>Advance your speaking fluency.</p>
+            </div>
+            <div class="icon-block">
+              <i>&#xea03;</i>
+              <h4>Learning Program</h4>
+              <p>Step-by-step guided programs.</p>
+            </div>
+            <div class="icon-block">
+              <i>&#xea04;</i>
+              <h4>Discussion Club</h4>
+              <p>Practice conversations with peers.</p>
+            </div>
+            <div class="icon-block">
+              <i>&#xea05;</i>
+              <h4>Language Trainings</h4>
+              <p>Interactive training sessions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="icon-section">
+      <h2>Our Program Features</h2>
+      <div class="icons-grid">
+        <div class="icon-block">
+          <i>📘</i>
+          <h4>Pre Test</h4>
+          <p>Test your skills before starting.</p>
+        </div>
+        <div class="icon-block">
+          <i>📗</i>
+          <h4>Survival English</h4>
+          <p>Learn practical English for daily use.</p>
+        </div>
+        <div class="icon-block">
+          <i>📕</i>
+          <h4>Fluent English</h4>
+          <p>Advance your speaking fluency.</p>
+        </div>
+        <div class="icon-block">
+          <i>🎓</i>
+          <h4>Learning Program</h4>
+          <p>Step-by-step guided programs.</p>
+        </div>
+        <div class="icon-block">
+          <i>💬</i>
+          <h4>Discussion Club</h4>
+          <p>Practice conversations with peers.</p>
+        </div>
+        <div class="icon-block">
+          <i>📚</i>
+          <h4>Language Trainings</h4>
+          <p>Interactive training sessions.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>About Us</h3>
+          <p>
+            PowerSchool is the leading provider of K-12 education technology
+            solutions.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="Solution.html">Solutions</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://twitter.com" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://linkedin.com" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://github.com" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PowerSchool. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="/Pages/main.js"></script>
+  </body>
+</html>

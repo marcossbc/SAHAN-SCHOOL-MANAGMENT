@@ -451,3 +451,17 @@ function initializeAttendancePage() {
         renderAttendance(filteredRecords);
     });
 }
+
+   const params = new URLSearchParams(window.location.search);
+    const username = params.get("user");
+
+    if (username) {
+      document.getElementById("user-name").textContent = username;
+    } else {
+      window.location.href = "login.html"; // redirect if not logged in
+    }
+
+    // Logout
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
