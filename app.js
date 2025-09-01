@@ -390,9 +390,7 @@ function initializeDailyAttendancePage() {
     });
 }
 
-// =================================================================
-//  NEW: ATTENDANCE SEARCH/VIEW PAGE FUNCTIONS
-// =================================================================
+
 function initializeAttendancePage() {
     const filterDateInput = document.getElementById('filterDate');
     const filterClassSelect = document.getElementById('filterClass');
@@ -452,16 +450,16 @@ function initializeAttendancePage() {
     });
 }
 
-   const params = new URLSearchParams(window.location.search);
-    const username = params.get("user");
+//    const params = new URLSearchParams(window.location.search);
+//     const username = params.get("user");
 
-    if (username) {
-      document.getElementById("user-name").textContent = username;
-    } else {
-      window.location.href = "login.html"; // redirect if not logged in
-    }
+//     if (username) {
+//       document.getElementById("user-name").textContent = username;
+//     } else {
+//       window.location.href = "login.html"; // redirect if not logged in
+//     }
 
-    // Logout
-    document.getElementById("logout-btn").addEventListener("click", () => {
-      window.location.href = "login.html";
-    });
+//     // Logout
+//     document.getElementById("logout-btn").addEventListener("click", () => {
+//       window.location.href = "login.html";
+//     });
