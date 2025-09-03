@@ -374,7 +374,7 @@ body:not(.light-mode) .light-icon {
     opacity: 0;
   }
   to {
-    /* transform: translateY(0); */
+    transform: translateY(0);
     opacity: 1;
   }
 }
