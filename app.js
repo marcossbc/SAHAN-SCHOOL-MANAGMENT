@@ -446,7 +446,7 @@ function initializeAttendancePage() {
             return dateMatch && classMatch;
         });
 
-        // renderAttendance(filteredRecords);
+        renderAttendance(filteredRecords);
     });
 }
 
