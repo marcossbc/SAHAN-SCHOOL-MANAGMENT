@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(username, JSON.stringify(userData));
 
         alert("Isdiiwaangelin Guuleysatay!");
-        window.location.href = "/index.html" + encodeURIComponent(username);
+        window.location.href = ".index.html" + encodeURIComponent(username);
     });
 
     // ===== Login =====

@@ -446,20 +446,18 @@ function initializeAttendancePage() {
             return dateMatch && classMatch;
         });
 
-        renderAttendance(filteredRecords);
+        // renderAttendance(filteredRecords);
     });
 }
 
-//    const params = new URLSearchParams(window.location.search);
-//     const username = params.get("user");
 
-//     if (username) {
-//       document.getElementById("user-name").textContent = username;
-//     } else {
-//       window.location.href = "login.html"; // redirect if not logged in
-//     }
 
-//     // Logout
-//     document.getElementById("logout-btn").addEventListener("click", () => {
-//       window.location.href = "login.html";
-//     });
+const logoutBtn = document.querySelector('.logout-btn');
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', () => {
+    if (confirm("Are you sure you want to logout?")) {
+      localStorage.clear();
+      window.location.href = "./Pages/login.html"; 
+    }
+  });
+}
