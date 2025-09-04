@@ -32,18 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Check if user already exists
         if (localStorage.getItem(username)) {
             alert("Magacan hore ayaa loo isticmaalay. Fadlan dooro magac kale.");
             return;
         }
 
-        // Save user to localStorage
+        // Save user
         const userData = { username, email, password };
         localStorage.setItem(username, JSON.stringify(userData));
 
+        // Mark user as logged in
+        localStorage.setItem("loggedInUser", username);
+
         alert("Isdiiwaangelin Guuleysatay!");
-        window.location.href = ".index.html" + encodeURIComponent(username);
+        window.location.href = "/.index.html";
     });
 
     // ===== Login =====
@@ -63,10 +65,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const userData = JSON.parse(storedUser);
 
         if (userData.password === password) {
+            // Login guuleystay
+            localStorage.setItem("loggedInUser", username);
             alert("Gelitaan guuleystay!");
-            window.location.href = "/index.html" + encodeURIComponent(username);
+            window.location.href = "/index.html";
         } else {
             alert("Password-ka waa khalad!");
         }
     });
+
+    // ===== Logout =====
+    const logoutBtn = document.querySelector('.logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            if (confirm("Are you sure you want to logout?")) {
+                localStorage.removeItem("loggedInUser");
+                window.location.href = "/Pages/login.html"; 
+            }
+     });
+}
 });
