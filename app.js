@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector(".menu-toggle");
     const sidebar = document.querySelector(".sidebar");
     const currentDateEl = document.getElementById('current-date');
+    
 
     // --- 1. Theme Management ---
     const applyTheme = (theme) => {

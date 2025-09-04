@@ -665,6 +665,9 @@ body:not(.light-mode) .light-icon {
   background-color: var(--info-color);
 }
 
+
+
+
 /* Make sure your responsive table styling is set up for the new table */
 @media (max-width: 768px) {
   /* ... existing responsive table styles ... */
