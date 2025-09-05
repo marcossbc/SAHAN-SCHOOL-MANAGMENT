@@ -279,7 +279,7 @@ function initializeStudentCardPage() {
         const cardHTML = `
             <div class="id-card">
                 <div class="id-card-header">
-                    <h4>Nidaamka Dugsiga Wiser</h4>
+                    <h4>Nidaamka Dugsiga /h4>
                 </div>
                 <div class="id-card-body">
                     <img src="${student.photo}" alt="Sawirka Ardayga">
@@ -449,7 +449,7 @@ function initializeAttendancePage() {
 }
 
 
-
+// logout functionality for all pages
 const logoutBtn = document.querySelector('.logout-btn');
 if (logoutBtn) {
   logoutBtn.addEventListener('click', () => {
