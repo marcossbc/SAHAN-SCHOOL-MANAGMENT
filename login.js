@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem("loggedInUser", username);
 
         alert("Isdiiwaangelin Guuleysatay!");
-        window.location.href = "/.index.html";
+        window.location.href = "./index.html";
     });
 
     // ===== Login =====
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Login guuleystay
             localStorage.setItem("loggedInUser", username);
             alert("Gelitaan guuleystay!");
-            window.location.href = "/index.html";
+            window.location.href = "./index.html";
         } else {
             alert("Password-ka waa khalad!");
         }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logoutBtn.addEventListener('click', () => {
             if (confirm("Are you sure you want to logout?")) {
                 localStorage.removeItem("loggedInUser");
-                window.location.href = "/Pages/login.html"; 
+                window.location.href = "./login.html"; 
             }
      });
 }

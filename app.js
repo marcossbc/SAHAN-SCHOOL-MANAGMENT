@@ -121,9 +121,6 @@ function initializeDashboard() {
 }
 
 
-// =================================================================
-//  STUDENTS PAGE FUNCTIONS
-// =================================================================
 function initializeStudentsPage() {
     const modal = document.getElementById("studentModal");
     const addStudentBtn = document.getElementById("addStudentBtn");
@@ -458,7 +455,7 @@ if (logoutBtn) {
   logoutBtn.addEventListener('click', () => {
     if (confirm("Are you sure you want to logout?")) {
       localStorage.clear();
-      window.location.href = "./Pages/login.html"; 
+      window.location.href = "./login.html"; 
     }
   });
 }
