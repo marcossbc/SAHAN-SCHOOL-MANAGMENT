@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.classList.remove('active');
         signupForm.classList.remove('active');
         showLoginBtn.classList.remove('active');
-        showSignupBtn.classList.remove('active');
+        // showSignupBtn.classList.remove('active');
 
         formToShow.classList.add('active');
         buttonToActivate.classList.add('active');
