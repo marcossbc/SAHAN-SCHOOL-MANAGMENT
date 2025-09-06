@@ -3,7 +3,7 @@
 This project is a comprehensive School Management System built to digitally manage school operations. It allows administrators and teachers to easily track student data, record attendance, and generate ID cards and academic reports. This system operates entirely on the client-side, using `localStorage` for data storage, which makes it easy to set up and use without the need for a dedicated server or database.
 
 <p align="center">
-  <img src="Screenshot 2025-09-06 084436" alt="SAHAN School Management System Preview" width="600">
+  <img src="/images/sahan.png.png" alt="SAHAN School Management System Preview" width="600">
 </p>
 
 ## Core Features
