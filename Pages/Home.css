@@ -423,6 +423,49 @@ h4 {
 .icon-block:hover i {
   color: #fff;
 }
+/* Scroll-to-top button style */
+#scrollTopBtn {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f28c1a; /* orange */
+  border: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(24px) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+  z-index: 9999;
+}
+
+/* icon inside */
+#scrollTopBtn .chev {
+  font-size: 30px;
+  color: white;
+  line-height: 1;
+  top: -10px;
+  transform: translateY(-2px); /* center visually */
+}
+
+/* visible state */
+#scrollTopBtn.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* small hover effect */
+#scrollTopBtn:hover {
+  transform: translateY(0) scale(1.06);
+}
+
 
 /* General Page Styling */
 .page-main {
@@ -1114,6 +1157,13 @@ h1 {
   .heading h2 {
     font-size: 22px;
   }
+  .feature-cards .card{
+    display: flex;
+    width: 80%;
+    margin-right: 20px;
+    font-size: 1rem;
+    
+  }
 }
 
 /* Responsive Design */
@@ -1180,6 +1230,7 @@ h1 {
   }
   .hamburger-menu.open .bar:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+  
   }
 
   .hero-content h1 {

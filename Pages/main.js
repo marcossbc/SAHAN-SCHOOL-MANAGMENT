@@ -39,3 +39,33 @@ function filterCourses(category) {
       }
     });
 }
+
+ (function(){
+    const btn = document.getElementById('scrollTopBtn');
+    const showAfter = 200; // px - beddel haddii aad rabto
+
+    // muujin/qarin marka la scroll gareeyo
+    function checkScroll() {
+        //. pageYOffset ereyga igu cusub 😒
+      if (window.pageYOffset > showAfter) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }
+
+    // marka la riixo, u rid kor
+    function scrollToTop(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // event listeners
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    btn.addEventListener('click', scrollToTop);
+    
+    checkScroll();
+  })();
