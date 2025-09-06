@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem("loggedInUser", username);
 
         alert("Isdiiwaangelin Guuleysatay!");
-        window.location.href = "./index.html";
+        window.location.href = "./Dashboard.html";
     });
 
     // ===== Login =====
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Login guuleystay
             localStorage.setItem("loggedInUser", username);
             alert("Gelitaan guuleystay!");
-            window.location.href = "./index.html";
+            window.location.href = "./Dashboard.html";
         } else {
             alert("Password-ka waa khalad!");
         }

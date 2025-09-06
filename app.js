@@ -455,7 +455,7 @@ if (logoutBtn) {
   logoutBtn.addEventListener('click', () => {
     if (confirm("Are you sure you want to logout?")) {
       localStorage.clear();
-      window.location.href = "./Pages/Home.html"; 
+      window.location.href = "./Pages/index.html"; 
     }
   });
 }
